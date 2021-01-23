@@ -26,5 +26,6 @@ class Knn:
         k_indices = np.argsort(distances)[:self.k]
         k_nearest_labels = [self.Y_train[i] for i in k_indices]
         # majority vote, most common class label
+
         most_common = Counter(k_nearest_labels).most_common(1)
         return most_common[0][0]
